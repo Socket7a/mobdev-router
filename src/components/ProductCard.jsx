@@ -1,12 +1,12 @@
+import { Link } from 'react-router-dom';
 import { labelForCategory } from '../data/products.js';
 
-export default function ProductCard({ product, onSelect }) {
+export default function ProductCard({ product }) {
   return (
-    <a
-      href={'/catalog/' + product.id}
+    <Link
+      to={'/catalog/' + product.id}
       className="product-card"
-      onClick={e => { e.preventDefault(); onSelect(product.id); }}
-    >
+      >
       <div className="product-swatch" style={{ background: product.color }}>
         {product.name[0]}
       </div>
@@ -15,6 +15,6 @@ export default function ProductCard({ product, onSelect }) {
         <p className="product-cat">{labelForCategory(product.category)}</p>
         <div className="product-price">{product.price} ₽</div>
       </div>
-    </a>
+    </Link>
   );
 }

@@ -4,7 +4,7 @@ export default function Header({ currentPage, onNavigate, onSearch }) {
 
   function handleSearchKeyDown(e) {
     if (e.key === 'Enter' && e.target.value.trim()) {
-    navigate("/search?q" + encodeURIComponent(e.target.value.trim()))
+    navigate("/search?q=" + encodeURIComponent(e.target.value.trim()))
     e.target.value = '';
     }
   }
